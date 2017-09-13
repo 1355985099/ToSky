@@ -1,7 +1,8 @@
-package com.springboot.controller;
+package com.logistic.controller;
 
-import com.springboot.pojo.User;
-import com.springboot.service.UserService;
+import com.logistic.pojo.User;
+import com.logistic.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

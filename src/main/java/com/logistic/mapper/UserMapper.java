@@ -1,8 +1,8 @@
-package com.springboot.mapper;
-
-import com.springboot.pojo.User;
+package com.logistic.mapper;
 
 import java.util.List;
+
+import com.logistic.pojo.User;
 
 
 public interface UserMapper {

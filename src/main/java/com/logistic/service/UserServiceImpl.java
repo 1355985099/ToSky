@@ -1,7 +1,8 @@
-package com.springboot.service;
+package com.logistic.service;
 
-import com.springboot.mapper.UserMapper;
-import com.springboot.pojo.User;
+import com.logistic.mapper.UserMapper;
+import com.logistic.pojo.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
