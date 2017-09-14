@@ -8,6 +8,7 @@ import com.logistic.tool.EmailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,7 +33,8 @@ public class UserServiceImpl implements UserService {
 		if(!user.getEmail().matches("[\\w\\.\\-]+@([\\w\\-]+\\.)+[\\w\\-]+")) {
 			throw new MsgException("邮箱格式错误");
 		}
-		eu.sendHtmlMail("  @qq.com", "你好", user.getEmail());
+		String html=eu.simpleHtml(user.getUserName(),"http://localhost/", new Date(System.currentTimeMillis()+1000*60*60));
+		eu.sendHtmlMail(user.getEmail(), "欢迎"+user.getUserName()+"使用通天快递", html);
 	}
 
 }

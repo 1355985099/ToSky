@@ -12,9 +12,9 @@ spring:
       prefix: /WEB-INF/
       suffix: .jsp
   mail:  
-    host: smtp.qq.com
-    username: 919200345@qq.com
-    password: zwwzejzybhcwbbbi
+    host: smtp.163.com
+    username: tongtianlogistics@163.com
+    password: tongtian123
     properties:  
       mail:  
         smtp: 
