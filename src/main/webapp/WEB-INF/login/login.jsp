@@ -8,34 +8,27 @@
 <!-- Head -->
 <head>
 
-<title>Multi Login & Signup Form A Flat Responsive Widget Template</title>
+<title>注册and登录</title>
 
 <!-- For-Mobile-Apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="application/x-javascript">addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //For-Mobile-Apps -->
 
-<!-- Style.CSS --> <link rel="stylesheet" href="${app}/assets/login/css/style.css" type="text/css" media="all" />
+<!-- Style.CSS --> 
+<link rel="stylesheet" href="${app}/assets/login/css/style.css" type="text/css" media="all" />
+
 
 <!-- Horizontal-Tabs-JavaScript -->
 <script src="${app}/assets/login/js/jquery-1.11.1.min.js"></script>
 <script src="${app}/assets/login/js/easyResponsiveTabs.js" type="text/javascript"></script>
-<script type="text/javascript">
-	$(document).ready(function () {
-		$('#horizontalTab').easyResponsiveTabs({
-			type: 'default', //Types: default, vertical, accordion           
-			width: 'auto', //auto or any width like 600px
-			fit: true, // 100% fit in a container
-		});
-	});
-</script>
-<!-- Horizontal-Tabs-JavaScript -->
-<%-- <script src="${app}/assets/jquery.validate/jquery.js"></script>
-<script src="${app}/assets/jquery.validate/jquery.validate.min.js"></script>
-<!-- 中文提示 -->
-<script src="${app}/assets/jquery.validate/messages_zh.js"></script> --%>
+
+<!-- 引入Jquer.validate.js -->
+<%-- <script src="${app}/assets/validate/jquery.js"></script> --%>
+<%-- <script src="${app}/assets/validate/jquery.validate.js"></script> --%>
+
 </head>
 <!-- Head -->
 
@@ -89,9 +82,10 @@
 								<form action="#" method="post">
 									<input type="text" Name="First Name" placeholder="用户名" required="">
 									<!-- <input type="text" Name="Last Name" placeholder="Last Name" required=""> -->
-									<input type="text" Name="Email" placeholder="邮箱" required="">
-									<input type="password" Name="Password" placeholder="密码" required="">
-									<input type="password" Name="Password" class="lessgap" placeholder="确认 密码" required="">
+									<input type="email"  Name="email" placeholder="邮箱" required="" class="required email">
+									<input id="password" type="password" Name="Password" placeholder="密码"  minlength="8" required="">
+									<input id="confirm_password" type="password" Name="Password" class="lessgap" placeholder="确认 密码"  minlength="8" required="" 
+									>
 									<input type="text" Name="Phone Number" placeholder="电话 号码" required="">
 									<div class="send-button">
 										<input type="submit" value="注册">

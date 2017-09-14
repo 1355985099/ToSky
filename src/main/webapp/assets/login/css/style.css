@@ -299,6 +299,19 @@ h2.resp-accordion {
 	background-color: #516b86;
 	outline: none;
 }
+.register input[type="email"] {
+	width: 80%;
+	padding: 17px 19px 17px 19px;
+	/*--w3layouts--*/
+	/*--agileits--*/
+	margin-bottom: 25px;
+	color: #FFF;
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	border: none;
+	background-color: #516b86;
+	outline: none;
+}
 
 .tab-1 form ul {
 	margin: 30px 0 50px;
@@ -776,6 +789,11 @@ h2.resp-accordion {
 		height: 140px;
 	}
 	.tab-1 form input[type="text"], .tab-1 form input[type="password"], .register input[type="text"], .register input[type="password"], .reset input[type="text"] {
+		padding: 12px 10px;
+		width: 85%;
+	}
+	/*自己添加*/
+	.register input[type="email"]{
 		padding: 12px 10px;
 		width: 85%;
 	}
