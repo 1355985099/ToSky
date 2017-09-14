@@ -23,5 +23,9 @@ public class HomeCotroller {
 		return "login/login";
 	}
 
-
+	//跳转登陆/注册页面
+	@RequestMapping("/reg")
+	public String toreg() {
+		return "login/reg";
+	}
 }

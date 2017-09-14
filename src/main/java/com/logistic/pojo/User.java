@@ -1,34 +1,75 @@
 package com.logistic.pojo;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class User {
-    private Integer id;
-    private String name;
-    private Integer age;
-    private String address;
-	public Integer getId() {
-		return id;
+	private String userId;
+	@NotNull(message="电话不能为空")
+	private String tel;
+	@NotNull(message="用户名不能为空")
+	@Size(min=2,max=30)
+	private String userName;
+	@NotNull(message="密码不能为空")
+	@Size(min=10,max=20)
+	private String password;
+	private Integer state;
+	@NotNull(message="邮箱不能")
+	private String email;
+	
+	//用于页面表单
+	private String password2;
+	
+	public String getUserId() {
+		return userId;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-	public String getName() {
-		return name;
+	public String getTel() {
+		return tel;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
-	public Integer getAge() {
-		return age;
+	public String getUserName() {
+		return userName;
 	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	public String getAddress() {
-		return address;
+	public String getPassword() {
+		return password;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-    
+	public Integer getState() {
+		return state;
+	}
+	public void setState(Integer state) {
+		this.state = state;
+	}
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", tel=" + tel + ", userName=" + userName + ", password=" + password
+				+ ", state=" + state + ", email=" + email + ", confirmPassword=" + getPassword2() + "]";
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword2() {
+		return password2;
+	}
+	public void setPassword2(String password2) {
+		this.password2 = password2;
+	}
+	
+	
+	
+	
+
 }

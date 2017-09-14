@@ -27,8 +27,15 @@
 
 <!-- 引入Jquer.validate.js -->
 <%-- <script src="${app}/assets/validate/jquery.js"></script> --%>
-<%-- <script src="${app}/assets/validate/jquery.validate.js"></script> --%>
-
+ <script src="${app}/assets/validate/jquery.validate.js"></script>
+	$(document).ready(function () {
+		$('#horizontalTab').easyResponsiveTabs({
+			type: 'default', //Types: default, vertical, accordion           
+			width: 'auto', //auto or any width like 600px
+			fit: true, // 100% fit in a container
+		});
+	});
+</script>
 </head>
 <!-- Head -->
 
@@ -80,13 +87,13 @@
 						<div class="tab-2 resp-tab-content" aria-labelledby="tab_item-2">
 							<div class="register">
 								<form action="#" method="post">
-									<input type="text" Name="First Name" placeholder="用户名" required="">
+									<input type="text" Name="userName" placeholder="用户名" required="">
 									<!-- <input type="text" Name="Last Name" placeholder="Last Name" required=""> -->
 									<input type="email"  Name="email" placeholder="邮箱" required="" class="required email">
 									<input id="password" type="password" Name="Password" placeholder="密码"  minlength="8" required="">
-									<input id="confirm_password" type="password" Name="Password" class="lessgap" placeholder="确认 密码"  minlength="8" required="" 
-									>
-									<input type="text" Name="Phone Number" placeholder="电话 号码" required="">
+									<input id="confirm_password" type="password" Name="confirmPassword" class="lessgap" placeholder="确认 密码"  minlength="8" required="" >
+									<!-- TODO: 两次密码不一致问题 -->
+									<input type="text" Name="tel" placeholder="电话 号码" required="">
 									<div class="send-button">
 										<input type="submit" value="注册">
 									</div>
