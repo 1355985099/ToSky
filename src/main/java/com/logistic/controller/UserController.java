@@ -25,4 +25,9 @@ public class UserController {
         //经过视图解析器跳转页面
         return  "userList";
     }
+    
+    @RequestMapping("/find")
+    public String toFind() {
+    	return "orderInfo";
+    }
 }
