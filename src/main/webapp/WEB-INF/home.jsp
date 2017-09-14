@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-
+<%@ include file="base.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +37,7 @@
 
 </head>
 <body>
-<%@ include file="base.jsp"%>
+
 	<!-- Header-Starts-Here -->
 	<div class="header">
 
@@ -60,10 +60,12 @@
 						<li class="active cl-effect-7"><a href="#">Home</a></li>
 						<li class="cl-effect-7 scroll"><a href="#services">服务</a></li>
 						<li class="cl-effect-7 scroll"><a href="#offer">提供</a></li>
-						<li class="cl-effect-7 scroll"><a href="#cover">Coverage</a></li>
+						<!-- <li class="cl-effect-7 scroll"><a href="#cover">登陆/注册</a></li> -->
+						<li class="cl-effect-7 scroll"><a href="${app}/login">xxx</a></li>
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
+						<a href="${app}/login/Reg">登陆/注册</a>
 					</ul>
 				</div>
 				<!-- //Navbar-collapse -->

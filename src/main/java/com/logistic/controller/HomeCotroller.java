@@ -16,5 +16,12 @@ public class HomeCotroller {
 	public String tohome() {
 		return "home";
 	}
+	
+	//跳转登陆/注册页面
+	@RequestMapping("/login/Reg")
+	public String tolgin() {
+		return "login/login";
+	}
+
 
 }
