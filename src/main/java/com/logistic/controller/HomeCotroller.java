@@ -22,7 +22,7 @@ public class HomeCotroller {
 	}
 	@RequestMapping("/home/login")
 	public String tologin() {
-		return "login/reg";
+		return "login/login";
 	}
 
 }

@@ -32,13 +32,15 @@
 
         <div class="page-container">
             <h1>登 录</h1>
-            <form id="commentForm"  action="${app}/login/reg" method="post">
+           <h5 style="padding-top: 20px" >${msg}</h5>
+            <form id="commentForm"  action="${app}/login/login" method="post">
 				<div>
-					<input id="username" type="text" name="userName" class="username" placeholder="用户名"  />
+					<input  type="text" name="userName" class="username" placeholder="用户名"  />
 				</div>
                 <div>
-					<input id="password" type="password" name="password" class="password" placeholder="密码" />
+					<input type="password" name="password" class="password" placeholder="密码" />
                 </div>
+                 <button id="submit" type="submit">注 册</button>
             </form>
             <div class="connect">
                 <p id="er">If we can only encounter each other rather than stay with each other,then I wish we had never encountered.</p>

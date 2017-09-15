@@ -31,7 +31,7 @@
     <body oncontextmenu="return false">
 
         <div class="page-container">
-            <h1 style="font-size:103px;">欢迎来到通天快递</h1>
+            <h1 style="font-size:80px;">欢迎来到通天快递</h1>
     <%--         <form id="commentForm"  action="${app}/user/reg" method="post">
 				<div>
 					<input id="username" type="text" name="userName" class="username" placeholder="用户名"  />
@@ -51,8 +51,8 @@
                 <button id="submit" type="submit">注 册</button>
             </form> --%>
             <div class="connect">
-                <p id="er" style="font-size:50px;">${msg}</p> 
-				<p id="er" style="margin-top:30px;font-size:50px;"><a href="http://mail.${email}">激活此账号!!</a></p>
+                <p id="er" style="font-size:40px;">${msg}</p> 
+				<p id="er" style="margin-top:30px;font-size:50px;"><a href="http://localhost/${link}">点击此连接!!</a></p>
             </div>
         </div>
 <!-- 		<div class="alert" style="display:none">

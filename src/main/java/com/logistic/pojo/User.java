@@ -7,11 +7,12 @@ public class User {
 	private String userId;
 	@NotNull(message="电话不能为空")
 	private String tel;
-	@NotNull(message="用户名不能为空")
-	@Size(min=2,max=30)
+
+	@Size(min=2,max=30,message="用户名字符个数应在2-30之间")
 	private String userName;
-	@NotNull(message="密码不能为空")
-	@Size(min=8,max=20)
+	
+
+	@Size(min=8,max=20,message="密码字符个数应在8-30之间")
 	private String password;
 	private Integer state;
 	@NotNull(message="邮箱不能空")
@@ -32,12 +33,7 @@ public class User {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+	
 	public String getPassword() {
 		return password;
 	}
@@ -49,6 +45,14 @@ public class User {
 	}
 	public void setState(Integer state) {
 		this.state = state;
+	}
+	
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	@Override
 	public String toString() {

@@ -32,23 +32,24 @@
 
         <div class="page-container">
             <h1>注册
-            	<if test="${msg!=null}" >(${msg}) </if><!-- 回显信息  -->
             </h1>
+             <h5 style="padding-top: 20px" >${msg}</h5>
             <form id="commentForm"  action="${app}/login/reg" method="post">
 				<div>
-					<input id="username" type="text" name="userName" class="username" placeholder="用户名"  />
+					<input id="username" type="text" name="userName" class="username" placeholder="用户名" value="${user.userName}"  />
 				</div>
                 <div>
-					<input id="password" type="password" name="password" class="password" placeholder="密码" />
+					<input id="password" type="password" name="password" class="password" placeholder="密码" value="${user.password}"/>
                 </div>
                 <div>
-					<input id="password2" type="password" name="password2" class="password2" placeholder="确认密码" />
+					<input id="password2" type="password" name="password2" class="password2" placeholder="确认密码"  value="${user.password2}" />
                 </div>
                  <div>
-					<input id="tel" type="text" name="tel" class="username" placeholder="电话"  />
+					<input id="tel" type="text" name="tel" class="username" placeholder="电话" value="${user.tel}" />
                 </div>
                 <div>
-					<input id="email" type="text" name="email" class="username" placeholder="邮箱"  />
+					<input id="email" type="text" name="email" class="username" placeholder="邮箱" value="${user.email}" />
+					<input id="emailr" type="hidden" value="" />
                 </div>
                 <button id="submit" type="submit">注 册</button>
             </form>
@@ -110,6 +111,7 @@
 
 		    });
 			$("#commentForm").validate({
+				onfocusout: function(element) { $(element).valid(); }, 
 				rules: {
 					userName: {
 						required: true,
@@ -126,10 +128,12 @@
 					},
 					email: {
 						required: true,
-						email: true
+						email: true,
+						isEmailRepeat: true
 					},
 					tel: {
 						required: true,
+						isMobile: true
 					}
 				},
 				messages: {
@@ -150,15 +154,28 @@
 						required: "电话不能为空",
 					},
 					email: {
+						required: "不能为空",
 						email: "邮箱格式有误"
 					}
 				}
 			});
-			jQuery.validator.addMethod(“isMobile”, function(value, element) {
+			/*电话校验*/
+			jQuery.validator.addMethod("isMobile", function(value, element) {
 				var length = value.length;
-				var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+d{8})$/;
+				var mobile = /^1[3|5][0-9]\d{4,8}$/;
 				return this.optional(element) || (length == 11 && mobile.test(value));
 				}, "请正确填写您的手机号码");
+			/*邮箱校验*/
+			jQuery.validator.addMethod("isEmailRepeat", function(value, element) {
+					var re
+					$.post("${app}/login/isEmailRepeat",{email:value},function(result){
+							re=result;
+				  });
+					if(re=="true"){
+						return true;   
+			    	}
+			    	return false;
+				}, "您输入的邮箱已被注册");
 		});
 		</script>
     </body>

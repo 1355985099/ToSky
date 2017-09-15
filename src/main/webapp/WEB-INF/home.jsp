@@ -65,7 +65,7 @@
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
-						<a href="${app}/login/Reg">登陆/注册</a>
+						<span><a href="${app}/home/reg">注&nbsp;册</a></span><span><a href="${app}/home/login"> &nbsp;| &nbsp;登&nbsp;陆</a></span>
 					</ul>
 				</div>
 				<!-- //Navbar-collapse -->

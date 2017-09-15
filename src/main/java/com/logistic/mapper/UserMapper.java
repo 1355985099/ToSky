@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.logistic.pojo.User;
 import com.logistic.pojo.UserAging;
@@ -47,4 +48,27 @@ public interface UserMapper {
       * @return
       */
      UserAging finAging(String userId); 
+     /**
+      * 根据id查询user
+      * @param userId
+      * @return
+      */
+     User findUser(String userId);
+     
+     @Update("update user_activate set activate_aging=#{date} where user_id=#{userId}")
+     void updateAging(@Param("date")Date date,@Param("userId")String userId);
+     /**
+      * 根据用户名和密码查询数据
+      * @param userName
+      * @param password
+      * @return
+      */
+     User Login(@Param("userName")String userName,@Param("password")String password);
+     /**
+      * 验证邮箱
+      * @param email
+      * @return
+      */
+     @Select("select user_id from user_p where email=#{email}")
+     List<String> isEmailRepeat(String email);
 }
