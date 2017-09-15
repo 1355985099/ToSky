@@ -146,7 +146,7 @@ button:active {
 	left:-140%;
 	top:0
 }
-.connect a {
+/* .connect a {
     display: inline-block;
     width: 32px;
     height: 35px;
@@ -155,7 +155,7 @@ button:active {
     -moz-transition: all .2s;
     -webkit-transition: all .2s;
     -ms-transition: all .2s;
-}
+} */
 .alert{
 	width:310px;
 	height:200px;

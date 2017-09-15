@@ -9,12 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
 
 @Controller
+@RequestMapping("/user/")
 public class UserController {
 
     @Autowired
@@ -28,25 +32,7 @@ public class UserController {
         //经过视图解析器跳转页面
         return  "userList";
     }
-    
-    @RequestMapping("/login")
-    public String login(String userName ,String password) {
-    	
-    	System.out.println(password + "<==password");
-		return null;
-    	
-    }
-    @RequestMapping("/user/reg")
-    public String reg(@Validated User user,BindingResult br,Model model) {
-    	if(br.hasErrors()) {
-    		model.addAttribute("error", br.getFieldError().getDefaultMessage());
-    	}
-    	try {
-			userService.saveUser(user);
-		} catch (MsgException e) {
-			model.addAttribute("error",e.getMessage());
-		}
-		return "redirect://";
-    }
+
+
     
 }

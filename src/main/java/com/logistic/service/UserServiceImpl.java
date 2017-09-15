@@ -25,16 +25,6 @@ public class UserServiceImpl implements UserService {
 		return userMapper.findAll();
 	}
 	
-	@Override
-	public void saveUser(User user) throws MsgException {
-		if (!user.getPassword().equals(user.getPassword2())) {
-			throw new MsgException("密码不一致");
-		}
-		if(!user.getEmail().matches("[\\w\\.\\-]+@([\\w\\-]+\\.)+[\\w\\-]+")) {
-			throw new MsgException("邮箱格式错误");
-		}
-		String html=eu.simpleHtml(user.getUserName(),"http://localhost/", new Date(System.currentTimeMillis()+1000*60*60));
-		eu.sendHtmlMail(user.getEmail(), "欢迎"+user.getUserName()+"使用通天快递", html);
-	}
+
 
 }

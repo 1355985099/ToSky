@@ -11,10 +11,10 @@ public class User {
 	@Size(min=2,max=30)
 	private String userName;
 	@NotNull(message="密码不能为空")
-	@Size(min=10,max=20)
+	@Size(min=8,max=20)
 	private String password;
 	private Integer state;
-	@NotNull(message="邮箱不能")
+	@NotNull(message="邮箱不能空")
 	private String email;
 	
 	//用于页面表单

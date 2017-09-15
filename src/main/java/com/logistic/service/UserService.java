@@ -7,5 +7,4 @@ import com.logistic.pojo.User;
 
 public interface UserService {
     public List<User> findAll();
-    void saveUser(User user)throws MsgException;
 }

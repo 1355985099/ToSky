@@ -13,5 +13,16 @@
     			values 
     				(#{userId},#{tel},#{userName},#{password},#{email},#{state})
     </insert>
-
+    <update id="updateUserState" >
+    	update user_p set state=#{state} where user_id=#{userId}
+    </update>
+    
+    
+     <update id="updateUserActivateState" >
+    	update user_activate set state=#{state} where user_id=#{userId}
+    </update>
+    
+    <select id="finAging" resultType="com.logistic.pojo.UserAging" >
+    	select * from user_activate where user_id=#{userId}
+    </select>
 </mapper>

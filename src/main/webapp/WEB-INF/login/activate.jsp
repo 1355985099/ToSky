@@ -31,8 +31,8 @@
     <body oncontextmenu="return false">
 
         <div class="page-container">
-            <h1>注册</h1>
-            <form id="commentForm"  action="${app}/login/reg" method="post">
+            <h1 style="font-size:103px;">欢迎 ${user.userName}</h1>
+    <%--         <form id="commentForm"  action="${app}/user/reg" method="post">
 				<div>
 					<input id="username" type="text" name="userName" class="username" placeholder="用户名"  />
 				</div>
@@ -49,10 +49,10 @@
 					<input id="email" type="text" name="email" class="username" placeholder="邮箱"  />
                 </div>
                 <button id="submit" type="submit">注 册</button>
-            </form>
+            </form> --%>
             <div class="connect">
-                <p id="er">If we can only encounter each other rather than stay with each other,then I wish we had never encountered.</p>
-				<p style="margin-top:20px;">如果只是遇见，不能停留，不如不遇见。</p>
+                <p id="er" style="font-size:50px;">请登录您的的邮箱</p> 
+				<p id="er" style="margin-top:30px;font-size:50px;"><a href="http://mail.${email}">激活此账号!!</a></p>
             </div>
         </div>
 <!-- 		<div class="alert" style="display:none">
@@ -107,53 +107,6 @@
 		                             ]
 
 		    });
-			$("#commentForm").validate({
-				rules: {
-					userName: {
-						required: true,
-						minlength: 2
-					},
-					password: {
-						required: true,
-						minlength: 8
-					},
-					password2: {
-						required: true,
-						minlength: 8,
-						equalTo: "#password"
-					},
-					email: {
-						required: true,
-						email: true
-					},
-					tel: {
-						required: true,
-						minlength:13
-					}
-				},
-				messages: {
-					userName: {
-						required: "用户名不能为空",
-						minlength: "用户名不能少于2个字符"
-					},
-					password: {
-						required: "密码不能为空",
-						minlength: "密码不能少于8个字符"
-					},
-					password2: {
-						required: "确认密码不能为空",
-						minlength: "密码不能少于8个字符",
-						equalTo: "与密码不相等"
-					},
-					tel: {
-						required: "电话不能为空",
-						minlength: "电话不能少于13个字符"
-					},
-					email: {
-						email: "邮箱格式有误"
-					}
-				}
-			});
 
 		});
 		</script>
