@@ -42,6 +42,7 @@ public interface UserMapper {
       * @param state
       */
      void updateUserActivateState(@Param("userId")String userId,@Param("state")Integer state);
+     
      /**
       * 查询时效
       * @param userId
