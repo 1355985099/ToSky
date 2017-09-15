@@ -65,11 +65,12 @@ public interface UserMapper {
       * @return
       */
      User Login(@Param("userName")String userName,@Param("password")String password);
-     /**
-      * 验证邮箱
-      * @param email
-      * @return
-      */
-     @Select("select user_id from user_p where email=#{email}")
-     List<String> isEmailRepeat(String email);
+    /**
+     * 数据查重
+     * @param vfname 校验字段
+     * @param vfvalue 校验值
+     * @return
+     */
+     @Select("select user_id from user_p where ${name}=#{value}")
+     List<String> isRepeat(@Param("name")String vfname,@Param("value")String vfvalue);
 }

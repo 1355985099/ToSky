@@ -20,7 +20,6 @@ public class LoginServiceImpl implements LoginService {
 	private EmailUtils eu;
 	@Autowired // userMapper对象应该由spring创建
 	private UserMapper userMapper;
-
 	@Override
 	public void registerUser(User user)  throws MsgException {
 		if (!user.getPassword().equals(user.getPassword2())) {
@@ -91,11 +90,18 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public String isEmailRepeat(String email) {
-		if(userMapper.isEmailRepeat(email).size()<=0) {
+	public String isRepeat(String vf) {
+		String[] vfs=vf.split(",");
+		if(userMapper.isRepeat(vfs[0],vfs[1]).size()<=0) {
 			return "true";
 		}
 		return "false";
+	/*	System.out.println(i++);
+		if(! vf.split(",")[1].equals("1@qq.com")) {
+			return "true";      //返回true 表示没有
+		}
+		return "false";*/
+	
 	}
 
 }

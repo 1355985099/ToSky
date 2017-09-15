@@ -95,13 +95,13 @@ public class LoginController {
     }
     
     //校验是否重复
-    @RequestMapping("/isEmailRepeat")
-    public void isEmailRepeat(String email,HttpServletResponse rep) {
-    	if(StringUtils.isEmpty(email)) {
+    @RequestMapping("/isRepeat")
+    public void isRepeat(String vf,HttpServletResponse rep) {
+     	if(StringUtils.isEmpty(vf)) {
     		return ;
     	}
     	try {
-			rep.getWriter().write(loginService.isEmailRepeat(email));
+			rep.getWriter().write(loginService.isRepeat(vf));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

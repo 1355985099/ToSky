@@ -10,5 +10,5 @@ public interface LoginService {
 	void activateUser(String userId) throws MsgException;
 	 User sendEmail(String userId);
 	 User Login(String userName,String password) throws MsgException;
-	 String isEmailRepeat(String email);
+	 String isRepeat(String vf);
 }
