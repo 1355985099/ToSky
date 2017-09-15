@@ -44,10 +44,13 @@ public class LoginServiceImpl implements LoginService {
 	public void activateUser(String userId) throws MsgException {
 		UserAging userAging = userMapper.finAging(userId);
 		if(userAging==null) {
-			throw new MsgException("您还没有注册");
+			throw new MsgException("您还没有注册请点击以下连接进行注册,home/reg");
 		}
 		if(System.currentTimeMillis()>userAging.getActivateAging().getTime()) {
-			throw new MsgException("您的连接已超时");
+			throw new MsgException("您的连接已超时请点击以下重新发送激活邮件,login/timeout");
+		}
+		if(userAging.getState()==1) {
+			throw new MsgException("您的帐号以激活请点击以下连接进行登录,home/login");
 		}
 		//修改状态
 		userMapper.updateUserActivateState(userId, 1);

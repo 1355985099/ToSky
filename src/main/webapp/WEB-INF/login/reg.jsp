@@ -6,7 +6,7 @@
     <head>
 
         <meta charset="utf-8">
-        <title>Fullscreen Login</title>
+        <title>通天 物流</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -31,7 +31,9 @@
     <body oncontextmenu="return false">
 
         <div class="page-container">
-            <h1>注册</h1>
+            <h1>注册
+            	<if test="${msg!=null}" >(${msg}) </if><!-- 回显信息  -->
+            </h1>
             <form id="commentForm"  action="${app}/login/reg" method="post">
 				<div>
 					<input id="username" type="text" name="userName" class="username" placeholder="用户名"  />
@@ -128,7 +130,6 @@
 					},
 					tel: {
 						required: true,
-						minlength:13
 					}
 				},
 				messages: {
@@ -147,14 +148,17 @@
 					},
 					tel: {
 						required: "电话不能为空",
-						minlength: "电话不能少于13个字符"
 					},
 					email: {
 						email: "邮箱格式有误"
 					}
 				}
 			});
-
+			jQuery.validator.addMethod(“isMobile”, function(value, element) {
+				var length = value.length;
+				var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+d{8})$/;
+				return this.optional(element) || (length == 11 && mobile.test(value));
+				}, "请正确填写您的手机号码");
 		});
 		</script>
     </body>

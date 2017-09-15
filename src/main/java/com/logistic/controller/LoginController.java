@@ -50,13 +50,15 @@ public class LoginController {
     
     //邮箱校验
     @RequestMapping(value="/activate/{userId}",method=RequestMethod.GET)
-    public String activateUser(@PathVariable String userId) {
+    public String activateUser(@PathVariable String userId,Model model) {
     	try {
 			loginService.activateUser(userId);
 		} catch (MsgException e) {
-			e.printStackTrace();
+			String error=e.getMessage();
+			model.addAttribute("msg", error.split(",")[0]); //错误提示
+			model.addAttribute("link", error.split(",")[1]); //连接
 		}
-		return "login/login";
+		return "login/message";
     }
     
 }

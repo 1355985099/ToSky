@@ -16,6 +16,13 @@ public class HomeCotroller {
 	public String tohome() {
 		return "home";
 	}
-	
+	@RequestMapping("/home/reg")
+	public String toreg() {
+		return "login/reg";
+	}
+	@RequestMapping("/home/login")
+	public String tologin() {
+		return "login/reg";
+	}
 
 }

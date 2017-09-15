@@ -1,146 +1,128 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp"%>
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 
+    <head>
 
+        <meta charset="utf-8">
+        <title>通天 物流</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-<!-- Head -->
-<head>
+        <!-- CSS -->
+        <link rel="stylesheet" href="${app}/assets/login/css/reset.css">
+        <link rel="stylesheet" href="${app}/assets/login/css/supersized.css">
+        <link rel="stylesheet" href="${app}/assets/login/css/style.css">
 
-<title>注册and登录</title>
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style type="text/css">
+        	.error{
+				    display: inline-grid;
+        	}
+        </style>
 
-<!-- For-Mobile-Apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<script type="application/x-javascript">addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //For-Mobile-Apps -->
+    </head>
 
-<!-- Style.CSS --> 
-<link rel="stylesheet" href="${app}/assets/login/css/style.css" type="text/css" media="all" />
+    <body oncontextmenu="return false">
 
-
-<!-- Horizontal-Tabs-JavaScript -->
-<script src="${app}/assets/login/js/jquery-1.11.1.min.js"></script>
-<script src="${app}/assets/login/js/easyResponsiveTabs.js" type="text/javascript"></script>
-
-<!-- 引入Jquer.validate.js -->
-<%-- <script src="${app}/assets/validate/jquery.js"></script> --%>
- <script src="${app}/assets/validate/jquery.validate.js"></script>
-	$(document).ready(function () {
-		$('#horizontalTab').easyResponsiveTabs({
-			type: 'default', //Types: default, vertical, accordion           
-			width: 'auto', //auto or any width like 600px
-			fit: true, // 100% fit in a container
-		});
-	});
-</script>
-</head>
-<!-- Head -->
-
-
-
-<!-- Body -->
-<body>
-
-	<!-- Heading -->
-	<h1>欢 迎 & 光 临</h1>
-	<!-- //Headng -->
-
-
-	<!-- Container -->
-	<div class="container">
-
-		<div class="tabs">
-
-			<div class="sap_tabs">
-
-				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-
-					<ul class="resp-tabs-list">
-						<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><h2><span>登 陆</span></h2></li>
-						<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>注 册</span></li>
-						<li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span>重置 密码</span></li>
-						<li class="resp-tab-item" aria-controls="tab_item-4" role="tab"><span>关于 我们</span></li>
-						<div class="clear"> </div>
-					</ul>
-
-					<div class="resp-tabs-container">
-						
-						<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-							<!-- Form -->
-							<form action="${app}/login" method="post">
-								<input type="text" Name="userName" placeholder="用户名"   required="" >
-								<input type="password" Name="password" placeholder="密码" minlength="8" required="">
-								<ul>
-									<li>
-										<input type="checkbox" id="brand1" value="">
-										<label for="brand1"><span></span>记住用户名</label>
-									</li>
-								</ul>
-								<input type="submit" value="LOGIN">
-							</form>
-							<!-- //Form -->
-						</div>
-
-						<div class="tab-2 resp-tab-content" aria-labelledby="tab_item-2">
-							<div class="register">
-								<form action="#" method="post">
-									<input type="text" Name="userName" placeholder="用户名" required="">
-									<!-- <input type="text" Name="Last Name" placeholder="Last Name" required=""> -->
-									<input type="email"  Name="email" placeholder="邮箱" required="" class="required email">
-									<input id="password" type="password" Name="Password" placeholder="密码"  minlength="8" required="">
-									<input id="confirm_password" type="password" Name="confirmPassword" class="lessgap" placeholder="确认 密码"  minlength="8" required="" >
-									<!-- TODO: 两次密码不一致问题 -->
-									<input type="text" Name="tel" placeholder="电话 号码" required="">
-									<div class="send-button">
-										<input type="submit" value="注册">
-									</div>
-								</form>
-							</div>
-						</div>
-
-						<div class="tab-3 resp-tab-content" aria-labelledby="tab_item-3">
-							<div class="reset">
-								<form action="#" method="post">
-									<input type="text" Name="Email" placeholder="Email" required="">
-									<p>(Or)</p>
-									<input type="text" Name="Phone Number" placeholder="Phone Number" required="">
-									<input type="submit" value="RESET MY PASSWORD">
-								</form>
-							</div>
-						</div>
-					</div>
-
+        <div class="page-container">
+            <h1>登 录</h1>
+            <form id="commentForm"  action="${app}/login/reg" method="post">
+				<div>
+					<input id="username" type="text" name="userName" class="username" placeholder="用户名"  />
 				</div>
-
+                <div>
+					<input id="password" type="password" name="password" class="password" placeholder="密码" />
+                </div>
+            </form>
+            <div class="connect">
+                <p id="er">If we can only encounter each other rather than stay with each other,then I wish we had never encountered.</p>
+				<p style="margin-top:20px;">如果只是遇见，不能停留，不如不遇见。</p>
+            </div>
+        </div>
+<!-- 		<div class="alert" style="display:none">
+			<h2>消息</h2>
+			<div class="alert_con">
+				<p id="ts"></p>
+				<p style="line-height:70px"><a class="btn">确定</a></p>
 			</div>
+		</div> -->
 
-		</div>
+        <!-- Javascript -->
+ 		<script src="${app}/assets/validate/jquery-1.11.1.js"></script>
+	
+		<script src="${app}/assets/validate/jquery.validate.js"></script>
+        <script src="${app}/assets/login/js/supersized.3.2.7.min.js"></script>
+		<script>
+		$(".btn").click(function(){
+			is_hide();
+		})
+		window.onload = function()
+		{
+			$(".connect p").eq(0).animate({"left":"0%"}, 600);
+			$(".connect p").eq(1).animate({"left":"0%"}, 400);
+		} 
+		function is_hide(){ $(".alert").animate({"top":"-40%"}, 300) }
+		function is_show(){ $(".alert").show().animate({"top":"45%"}, 300) }
+		jQuery(function($){
 
-	</div>
-	<!-- //Container -->
+		    $.supersized({
 
+		        // Functionality
+		        slide_interval     : 6000,    // Length between transitions
+		        transition         : 1,    // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+		        transition_speed   : 3000,    // Speed of transition
+		        performance        : 1,    // 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
 
+		        // Size & Position
+		        min_width          : 0,    // Min width allowed (in pixels)
+		        min_height         : 0,    // Min height allowed (in pixels)
+		        vertical_center    : 1,    // Vertically center background
+		        horizontal_center  : 1,    // Horizontally center background
+		        fit_always         : 0,    // Image will never exceed browser width or height (Ignores min. dimensions)
+		        fit_portrait       : 1,    // Portrait images will not exceed browser height
+		        fit_landscape      : 0,    // Landscape images will not exceed browser width
 
-	<!-- Footer -->
-	<div class="footer">
+		        // Components
+		        slide_links        : 'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
+		        slides             : [    // Slideshow Images
+		                                 {image : '${app}/assets/login/img/1.jpg'},
+		                                 {image : '${app}/assets/login/img/2.jpg'},
+		                                 {image : '${app}/assets/login/img/3.jpg'}
+		                             ]
 
-		<!-- Copyright -->
-		<div class="copyright">
-			<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-		</div>
-		<!-- //Copyright -->
+		    });
+			$("#commentForm").validate({
+				rules: {
+					userName: {
+						required: true,
+						minlength: 2
+					},
+					password: {
+						required: true,
+						minlength: 8
+					}
+				},
+				messages: {
+					userName: {
+						required: "用户名不能为空",
+						minlength: "用户名不能少于2个字符"
+					},
+					password: {
+						required: "密码不能为空",
+						minlength: "密码不能少于8个字符"
+					}
+				}
+			});
 
-	</div>
-	<!-- //Footer -->
-
-
-
-</body>
-<!-- //Body -->
-
-
+		});
+		</script>
+    </body>
 
 </html>
+
