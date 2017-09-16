@@ -1,38 +1,34 @@
 package com.logistic.pojo;
 
+import java.math.BigDecimal;
+
 public class OrderInfo {
-	private String orderInfoId;//运单号,自动生成
-	private Integer price;//运费
-	private Integer number;//货物数量
+	private Order order;
+	private String orderInfoId;
+	private String sendTel;
+	private String cargoName;
+	private Integer cnumber;
+	private Double nweight;
+	private Double price;
+	private Double volume;
+	private String receiveTel;
+	private String sendAddress;
+	private String receiveAddress;
+	private String sendName;
+	private String receiveName;
 	
-	private String sendTel;//发货人电话号码
-	private String sendName;//发货人姓名
-	private String sendAddress;//发货人地址
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 	
-	private String receiveTel;//收货人电话号码
-	private String receiveName;//收货人姓名
-	private String receiveAddress;//收货人地址
-	
-	private String cargoName;//货物名称
-	private Integer weigth;//货物重量
-	private Integer volume;//货物体积
 	public String getOrderInfoId() {
 		return orderInfoId;
 	}
 	public void setOrderInfoId(String orderInfoId) {
 		this.orderInfoId = orderInfoId;
-	}
-	public Integer getPrice() {
-		return price;
-	}
-	public void setPrice(Integer price) {
-		this.price = price;
-	}
-	public Integer getNumber() {
-		return number;
-	}
-	public void setNumber(Integer number) {
-		this.number = number;
 	}
 	public String getSendTel() {
 		return sendTel;
@@ -40,17 +36,36 @@ public class OrderInfo {
 	public void setSendTel(String sendTel) {
 		this.sendTel = sendTel;
 	}
-	public String getSendName() {
-		return sendName;
+	public String getCargoName() {
+		return cargoName;
 	}
-	public void setSendName(String sendName) {
-		this.sendName = sendName;
+	public void setCargoName(String cargoName) {
+		this.cargoName = cargoName;
 	}
-	public String getSendAddress() {
-		return sendAddress;
+	public Integer getCnumber() {
+		return cnumber;
 	}
-	public void setSendAddress(String sendAddress) {
-		this.sendAddress = sendAddress;
+	public void setCnumber(Integer cnumber) {
+		this.cnumber = cnumber;
+	}
+	
+	public Double getNweight() {
+		return nweight;
+	}
+	public void setNweight(Double nweight) {
+		this.nweight = nweight;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public Double getVolume() {
+		return volume;
+	}
+	public void setVolume(Double volume) {
+		this.volume = volume;
 	}
 	public String getReceiveTel() {
 		return receiveTel;
@@ -58,11 +73,11 @@ public class OrderInfo {
 	public void setReceiveTel(String receiveTel) {
 		this.receiveTel = receiveTel;
 	}
-	public String getReceiveName() {
-		return receiveName;
+	public String getSendAddress() {
+		return sendAddress;
 	}
-	public void setReceiveName(String receiveName) {
-		this.receiveName = receiveName;
+	public void setSendAddress(String sendAddress) {
+		this.sendAddress = sendAddress;
 	}
 	public String getReceiveAddress() {
 		return receiveAddress;
@@ -70,24 +85,20 @@ public class OrderInfo {
 	public void setReceiveAddress(String receiveAddress) {
 		this.receiveAddress = receiveAddress;
 	}
-	public String getCargoName() {
-		return cargoName;
+	public String getSendName() {
+		return sendName;
 	}
-	public void setCargoName(String cargoName) {
-		this.cargoName = cargoName;
+	public void setSendName(String sendName) {
+		this.sendName = sendName;
 	}
-	public Integer getWeigth() {
-		return weigth;
+	public String getReceiveName() {
+		return receiveName;
 	}
-	public void setWeigth(Integer weigth) {
-		this.weigth = weigth;
+	public void setReceiveName(String receiveName) {
+		this.receiveName = receiveName;
 	}
-	public Integer getVolume() {
-		return volume;
-	}
-	public void setVolume(Integer volume) {
-		this.volume = volume;
-	}
+	
+
 	
 
 }
