@@ -65,7 +65,14 @@
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
-						<span><a href="${app}/home/reg">注&nbsp;册</a></span><span><a href="${app}/home/login"> &nbsp;| &nbsp;登&nbsp;陆</a></span>
+						<c:if test="${sessionUser==null}">
+							<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
+							<span  style="color: beige">&nbsp;| &nbsp;</span>
+							<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
+						</c:if>
+						<c:if test="${sessionUser!=null}" >
+							<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
+						</c:if>
 					</ul>
 				</div>
 				<!-- //Navbar-collapse -->
