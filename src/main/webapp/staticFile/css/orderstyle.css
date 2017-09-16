@@ -22,7 +22,8 @@
 	nav.vertical ul li{display:block;}
 	nav.horizontal ul li{display: inline-block;}
 	img{max-width:100%;}
-
+	label{display:block;color:red;}
+   
 /*-- Reset Code --*/
 
 
@@ -543,7 +544,6 @@ input[type="text"], input[type="password"] {
         font-size: 12.4px;
     }
 }
-
 
 
 /*--- Responsive Code ---*/

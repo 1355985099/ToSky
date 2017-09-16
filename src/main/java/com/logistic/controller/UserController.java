@@ -26,8 +26,5 @@ public class UserController {
         return  "userList";
     }
     
-    @RequestMapping("/find")
-    public String toFind() {
-    	return "orderInfo";
-    }
+   
 }
