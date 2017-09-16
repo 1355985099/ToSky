@@ -5,6 +5,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://176.20.14.219:3306/logistic
+#    url: jdbc:mysql://localhost/logistic
     username: root
     password: root
   mvc:
