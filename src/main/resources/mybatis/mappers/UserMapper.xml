@@ -7,5 +7,11 @@
     <select id="findAll" resultType="com.logistic.pojo.User">
         select * from user_p
     </select>
+    <insert id="saveUser">
+    	insert into user_p 
+    		(user_id,tel,username,password,email,state) 
+    			values 
+    				(#{userId},#{tel},#{userName},#{password},#{email},#{state})
+    </insert>
 
 </mapper>
