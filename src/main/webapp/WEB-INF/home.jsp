@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <%@ include file="base.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -66,16 +67,16 @@
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
-                        <c:if test="${sessionUser==null}">
-                            <span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
-                            <span  style="color: beige">&nbsp;| &nbsp;</span>
-                            <span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
-                        </c:if>
-                        <c:if test="${sessionUser!=null}" >
-                            <span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
-                            <span  style="color: beige">&nbsp;| &nbsp;</span>
-                            <span style="color: beige" ><a href="${app}/login/logout"  style="color: beige">退&nbsp;出</a></span>
-                        </c:if>
+						<c:if test="${sessionUser==null}">
+							<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
+							<span  style="color: beige">&nbsp;| &nbsp;</span>
+							<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
+						</c:if>
+						<c:if test="${sessionUser!=null}" >
+							<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
+							<span  style="color: beige">&nbsp;| &nbsp;</span>
+							<span style="color: beige" ><a href="${app}/login/logout"> 退&nbsp;出</a></span>
+						</c:if>
 					</ul>
 				</div>
 				<!-- //Navbar-collapse -->
@@ -199,7 +200,7 @@
 							<img src="${app}/assets/images/o2.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4>International Freight</h4>
+							<h4><a href="${app}/order">International Freight</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>
@@ -223,7 +224,7 @@
 							<img src="${app}/assets/images/o4.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4>Consultancy Services</h4>
+							<h4><a href="${app}/toOrderListForUser" >查询 订单 </a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>
@@ -385,7 +386,7 @@
 				<!-- Location-Starts-Here -->
 				<div class="col-md-4 details-grid locations slideanim">
 					<h3>Locations</h3>
-					<img src="${app}/assets/images/location.jpg" alt="Tradeaux">
+					<a href="${app}/findMap"><img src="${app}/assets/images/location.jpg" alt="Tradeaux"></a>
 				</div>
 				<!-- //Location-Ends-Here -->
 

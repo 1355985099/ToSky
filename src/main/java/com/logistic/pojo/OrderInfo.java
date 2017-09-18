@@ -1,5 +1,4 @@
 package com.logistic.pojo;
-
 import java.math.BigDecimal;
 
 public class OrderInfo {
@@ -97,8 +96,5 @@ public class OrderInfo {
 	public void setReceiveName(String receiveName) {
 		this.receiveName = receiveName;
 	}
-	
-
-	
 
 }

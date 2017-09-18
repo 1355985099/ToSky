@@ -28,4 +28,10 @@ public class UserController {
     }
 
 
+    @RequestMapping("/orderListForUser")
+    public String findOrderListForUser() {
+    	return "order/orderListForUser";
+    }
+
+
 }
