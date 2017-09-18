@@ -106,5 +106,19 @@ public class LoginController {
 			e.printStackTrace();
 		}
     }
+	@RequestMapping("/logout")
+	//登陆
+	public String logout(String userName,String password,Model model,HttpSession Session) {
+		User user=null;
+		try {
+			user = loginService.Login(userName,password);
+		} catch (MsgException e) {
+			model.addAttribute("msg", e.getMessage());
+			e.printStackTrace();
+		}
+		Session.setAttribute("sessionUser",user);
+		return "home";
+
+	}
     
 }
