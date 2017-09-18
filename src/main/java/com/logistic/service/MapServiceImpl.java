@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.logistic.mapper.MapMapper;
-import com.logistic.pojo.map;
+
+import com.logistic.pojo.Dept;
 
 @Service
 public class MapServiceImpl implements MapService {
@@ -15,7 +16,7 @@ public class MapServiceImpl implements MapService {
 	private MapMapper mapMapper;
 	
 	@Override
-	public List<String> findMap() {
+	public List<Dept> findMap() {
 		
 		return mapMapper.findMap();
 	}

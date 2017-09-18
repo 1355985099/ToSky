@@ -1203,9 +1203,10 @@ function gotoUrl( url , target ){
 }
 
 /* 打开一个新页面：调用时不加第二个参数 add by tony */
+/*formSubmit('delete','_self') */
 function formSubmit (url,sTarget){
-    document.forms[0].target = sTarget
-    document.forms[0].action = url;
+    document.forms[0].target = sTarget   //表示新跳转的页面在当前窗口打开
+    document.forms[0].action = url;      //发起请求 delete
     document.forms[0].submit();
     return true;
 }

@@ -23,7 +23,6 @@
 
 				<th>${u.name}</th>
 				<th>${u.age}</th>
-				<%-- <th>${u.sex}</th> --%>
 				<th>
 					<a href="${pageContext.request.contextPath}/toUpdateUser?id=${u.id}"><button>修改</button></a>
 					<a href="${pageContext.request.contextPath}/deleteUser?id=${u.id}"><button>删除</button></a>

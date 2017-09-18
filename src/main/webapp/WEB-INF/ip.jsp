@@ -1,32 +1,112 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<style type="text/css">
-		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
-		#allmap{height:90%;width:100%;content: counter();"}
-		#r-result{height:20%;width:100%;font-size:20px;}
-		#cityName{
-			content: open-quote;
-		}
+		html{height:100%;}
+		body{height:100%;margin:0px;padding:0px;}
+		#top{width:100%;height:60px;border-bottom:1px solid #ccc;}
+		#aside{position:absolute;height:541px;border-right:1px solid #bbb;background:#ddd;}
+		/* #map{margin-left:410px;} */
 	</style>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4GP1SsiqVkKPbFibQ8Qc4smTsFDFLQax"></script>
-	<title>地址解析</title>
-</head>
-<body>
+	<title>网点</title>
+	<!-- Bootstrap-Core-CSS -->
+	<link href="${app}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom-Theme-Styling -->
+	<link href="${app}/assets/css/style.css" rel="stylesheet"
+		type="text/css" media="all" />
+	<!-- Owl-Carousel-Styling -->
+	<link rel="stylesheet" href="${app}/assets/css/owl.carousel.css"
+		type="text/css" media="all">
+	<script src="${app}/assets/js/modernizr.custom.js"></script>
+	<script src="${app}/assets/js/jquery.min.js"></script>
 	
-	<div id="allmap"></div>
-	<div id="r-result">
-		 城市名：<input id="cityName" type="text" style="width:100px;margin-right: 100px"/>
-		<input type="button" value="查询" onclick="theLocation()"/>
-		<input type="button" value="批量地址解析" onclick="bdGEO()" />
-		<br/>
-		<br/> 
-	  	
+</head>
+<body onresize="checkSize()" style="background:url(../assets/images/1.jpg)">
+	<div class="row">	
+		<div style="width:95%" class="center-block">
+			<!-- Header-Starts-Here -->
+			<div style="height:70px">
+				<div class=" header">
+					<div class="container"  >
+					<!-- Navigation -->
+					<nav class="navbar navbar-inverse" style="left:20%"> 
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse"
+							id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="col-md-1 cl-effect-7"><a href="#">Home</a></li>
+								<li class="col-md-1 cl-effect-7"><a href="#services">服务</a></li>
+								<li class="col-md-1 cl-effect-7"><a href="#offer">提供</a></li>
+								<li class="col-md-1 cl-effect-7"><a href="${app}/findMap.action">网点</a></li>
+								<li class="col-md-1 cl-effect-7"><a href="${app}/home/reg">注&nbsp;册/</a></li>
+								<li class="col-md-1 cl-effect-7"><a href="${app}/home/login"> &nbsp;| &nbsp;登&nbsp;陆</a>
+								</li>
+							</ul>
+						</div>
+						<!-- //Navbar-collapse -->
+					</nav>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<div id="main">
+		<div class="row">
+		    <div id="aside" class=" panel panel-default col-md-2 col-md-offset-2 ">
+					<br/>
+		    	<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">城市名</span>
+					<input type="text" id="cityName" class="form-control" placeholder="city name" aria-describedby="basic-addon1">
+
+					<!-- <input id="cityName" type="text" style="width:100px;margin-right: 100px"/> -->
+					
+				</div>
+				<div class="input-group">
+					<br/>
+					<button type="button"  onclick="theLocation(this.value)" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="该功能为查询指定地点的下级网点">查询</button>
+					&nbsp;&nbsp;
+					<button type="button"  onclick="getLocation()" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="我是啥我自己都不知道">显示当前位置</button>
+				</div>
+				<br/>
+				<div>
+					<div class="panel panel-default" >
+					  <div class="panel-heading">网点列表</div>
+					  <div class="panel-body pre-scrollable"  style="height:80%">
+					    <ul class="nav nav-pills nav-stacked">
+						  <c:forEach items="${mapList}" var="d" >	
+						  		<%-- <c:set value="${fn:replace(d,']', '') }" var="tmp"></c:set>		  
+						  		<c:set value="${tmp = fn:replace(tmp,'[', '') }" var="tmp"></c:set>	 --%>	  
+							  <li>
+							  		<button type="button" style="float:left" value="${d.address}" onclick="theLocation('${d.address}')" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="跳到->${d.deptName}  下的网点"  >${d.address},${d.deptName},${d.telephone }</button>
+							  	</li>
+						  </c:forEach>
+						</ul>	
+					  </div>
+					</div>
+				</div>  
+				<div>
+					<div class="panel panel-default" >
+					  <div class="panel-heading">使用说明</div>
+					  	<div class="panel-body"  style="height:100%">
+					  		查看网点列表<br/>
+					  		查看网点间路径(暂不支持中间点)<br/>
+					  	</div>
+					</div>
+				</div>   
+		    </div>
+		    
+		   
+			<div class="panel panel-default col-md-6 col-md-offset-4" style="background-color:#bbb">
+				<div id="map"  style="height:530px"></div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
 <script type="text/javascript">
@@ -51,16 +131,40 @@
 	var startMarker = null;//起点标注
 	var endMarker = null;//终点标注
 	var transit = null;//路径检索对象
-	
-	var map = new BMap.Map("allmap");
-	map.centerAndZoom(new BMap.Point(116.404, 39.915),5);
-	
+	var map = null;
+	function checkSize() {
+	    var h = document.documentElement.clientHeight;
+	    document.getElementById('aside').style.height = h - 80 + "px";
+	    document.getElementById('map').style.height = h - 80 + "px";
+	}
+	function init() {
+	    checkSize();
+	    map = new BMap.Map('map');
+	    map.centerAndZoom(new BMap.Point(116.404, 39.915),5);
+	    window.map = map;
+	}
+	init();
+	//map.centerAndZoom(new BMap.Point(116.404, 39.915),5);
+	// console.log(map.getContainer());
 	//城市名查询
-	function theLocation() {
-		var city = document.getElementById("cityName").value;
-		if (city != "") {
-			map.centerAndZoom(city, 11);//用地图名设置成地图中心点
+	function theLocation(city) {
+		if (city == "") {
+			city = document.getElementById("cityName").value;
 		}
+		map.centerAndZoom(city.replace("\"",""), 13);//用地图名设置成地图中心点
+	}
+	function getLocation(){
+		var geolocation = new BMap.Geolocation();
+		geolocation.getCurrentPosition(function(r){
+			if(this.getStatus() == BMAP_STATUS_SUCCESS){
+				var mk = new BMap.Marker(r.point);
+				map.addOverlay(mk);
+				map.centerAndZoom(r.point,11);
+			}
+			else {
+				alert('failed'+this.getStatus());
+			}        
+		},{enableHighAccuracy: true})
 	}
 	
 	map.addEventListener("tilesloaded", function() {
@@ -140,7 +244,7 @@
 					height : 100, // 信息窗口高度
 				//title : "海底捞王府井店" , // 信息窗口标题
 				}
-				var infoWindow = new BMap.InfoWindow(label.content, opts);
+				var infoWindow = new BMap.InfoWindow(label.content.replace(/\"|\"$/g,''), opts);
 				marker.addEventListener("click", function() {
 					map.openInfoWindow(infoWindow, point); //开启信息窗口
 				});
@@ -164,14 +268,18 @@
 				if (index >= adds.length) {
 					return;
 				}
-				myGeo.getPoint(add, function(point) {
+				myGeo.getPoint(add.address, function(point) {
 					if (point) {
 						//将地区信息输出在页面上
 						var address = new BMap.Point(point.lng, point.lat);
-						addMarker(address, new BMap.Label(index + ":" + add, {
+						addMarker(address, new BMap.Label(index + ":" + 
+								add.address+"\n"+
+								add.deptName+"\n"+
+								add.telephone
+								, {
 							offset : new BMap.Size(20, -10)
 						}));
-					}else console.log(add+"地址解析失败");
+					}else console.log(add.address+"地址解析失败");
 				}, "合肥市");
 				index++;
 				bdGEO();
@@ -184,18 +292,11 @@
 			}
 
 			bdGEO();
-
-			console.log("2");
 			// 编写自定义函数,创建文字标注,增加右键菜单
 
-			console.log("3");
 			//开启鼠标滚轮缩放
 			map.enableScrollWheelZoom(true);
-
-			console.log("4");
-			
-
-			console.log("5");
+		
 			function Clear() {//清除标注物
 				//清楚地图的起点和终点的标注
 				if(startMarker != null) startMarker.setIcon(originalStartIcon);
@@ -227,6 +328,7 @@
 				transit.search(p1, p2);//进行路径查询
 				Clear();//消除界面原有设置的标注物
 			}
+			
 			console.log("7");
 			//增加全局的右键菜单
 			mapMenu = new BMap.ContextMenu();

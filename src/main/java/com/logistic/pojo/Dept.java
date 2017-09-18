@@ -1,23 +1,34 @@
 package com.logistic.pojo;
 
 public class Dept {
-	private String deptId;//部门ID
-	private Dept parentDept;//上级部门
-	private String deptName;//部门名称
-	private Integer state;//部门状态
-	private double longitude;//部门经度
-	private double latitude;//部门纬度
+
+	private String deptId; //店铺ID
+	private String parentId; //地区店铺
+	private String address; //店铺地址
+	private String deptName;//店铺名称
+	private String remark; //备注
+	private int state; // 状态 “1启用0停用”
+	private String telephone; //电话号码
+	private int longitude; //经度
+	private int latitude; //纬度
+	
 	public String getDeptId() {
 		return deptId;
 	}
 	public void setDeptId(String deptId) {
 		this.deptId = deptId;
 	}
-	public Dept getParentDept() {
-		return parentDept;
+	public String getParentId() {
+		return parentId;
 	}
-	public void setParentDept(Dept parentDept) {
-		this.parentDept = parentDept;
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getDeptName() {
 		return deptName;
@@ -25,23 +36,35 @@ public class Dept {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}
-	public Integer getState() {
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	public int getState() {
 		return state;
 	}
-	public void setState(Integer state) {
+	public void setState(int state) {
 		this.state = state;
 	}
-	public double getLongitude() {
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public int getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(double longitude) {
+	public void setLongitude(int longitude) {
 		this.longitude = longitude;
 	}
-	public double getLatitude() {
+	public int getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(double latitude) {
+	public void setLatitude(int latitude) {
 		this.latitude = latitude;
 	}
-   
+
 }
