@@ -54,9 +54,9 @@
 	<div class="wrapper">
 		<header class="main-header">
 			<a href="#" class="logo"> <span class="logo-mini"> <img
-					src="vince/images/v01.png">
+					src="${app}/staticfile/vince/images/v01.png">
 			</span> <span class="logo-lg"><img
-					src="${app}/staticfile//vince/images/v01.png">项目</span>
+					src="${app}/staticfile/vince/images/v01.png">项目</span>
 			</a>
 			<nav class="navbar navbar-static-top">
 				<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
@@ -97,7 +97,13 @@
 					<div class="pull-left info">
 						<p>当前用户：管理员</p>
 						<p class="menu_time">
-							时间：<span id="nowTime"> 他他他</span>
+							<span id="nowTime"> <%
+ 	java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm");
+ 	java.util.Date currentTime = new java.util.Date();
+ 	String time = simpleDateFormat.format(currentTime).toString();
+ 	out.println("当前时间：" + time);
+ %>
+							</span>
 						</p>
 					</div>
 				</div>
@@ -151,7 +157,7 @@
 									角色新增</a></li>
 							<li><a href="sbaz.html"><i class="fa fa-bookmark"></i>
 									角色修改</a></li>
-							<li><a href="sbjx.html"><i class="fa fa-bookmark"></i>
+							<li><a href="/role/toFindAll"><i class="fa fa-bookmark"></i>
 									角色查询</a></li>
 							<li><a href="sbbf.html"><i class="fa fa-bookmark"></i>
 									角色删除</a></li>
@@ -217,8 +223,7 @@
 				<div class="sy_info">
 					<div class="sy_info_left lindianjia">
 						<p>
-							月完成目标：<span>57430</span> 百万 <br> 日分解目标：<span>4098</span>
-							百万
+							月完成目标：<span>57430</span> 百万 <br> 日分解目标：<span>4098</span> 百万
 						</p>
 					</div>
 					<div class="sy_info_right">

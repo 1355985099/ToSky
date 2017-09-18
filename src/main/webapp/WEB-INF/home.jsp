@@ -61,7 +61,7 @@
 						<li class="cl-effect-7 scroll"><a href="#services">服务</a></li>
 						<li class="cl-effect-7 scroll"><a href="#offer">提供</a></li>
 						<!-- <li class="cl-effect-7 scroll"><a href="#cover">登陆/注册</a></li> -->
-						<li class="cl-effect-7 scroll"><a href="${app}/login">xxx</a></li>
+						<li class="cl-effect-7 scroll"><a href="${app}/downLoad">下载</a></li>
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
@@ -316,7 +316,7 @@
 							<img src="${app}/assets/images/n2.png" alt="Tradeaux">
 						</div>
 						<div class="news-info">
-							<h4>2015 Revenue Report Released</h4>
+							<h4><a href="${app}/downLoad">Informations DownLoad</a></h4>
 						</div>
 						<div class="clearfix"></div>
 					</div>
