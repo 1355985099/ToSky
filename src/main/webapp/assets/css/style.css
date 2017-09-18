@@ -76,6 +76,7 @@ a:focus, a:hover {
 .navbar-nav {
     width: 100%;
 }
+
 .navbar-nav>li {
     width: 14.28%;
 }
