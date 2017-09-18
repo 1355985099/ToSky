@@ -30,9 +30,5 @@ public class OrderController {
 		return "/order/orderList";
 	}
 	
-	@RequestMapping("/se")
-	public String to() {
-		return "order/orderList";
-	}
-	
+
 }

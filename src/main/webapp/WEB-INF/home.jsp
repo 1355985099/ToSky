@@ -188,7 +188,7 @@
 							<img src="${app}/assets/images/o2.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4>International Freight</h4>
+							<h4><a href="order">International Freight</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>

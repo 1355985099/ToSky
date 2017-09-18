@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/staticFile/assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/staticfile/assets/ico/favicon.ico">
 
     <title>订单</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="${pageContext.request.contextPath}/staticFile/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/staticfile/assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath}/staticFile/assets/css/style.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/staticFile/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/staticfile/assets/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/staticfile/assets/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -41,13 +41,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">首页</a>
+          <a class="navbar-brand" href="/">home</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#works">Works</a></li>
+            
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -73,22 +71,22 @@
 			<h1>通天物流理念</h1>
 			
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<img src="${pageContext.request.contextPath}/staticFile/assets/img/portfolio/folio01.png" class="img-responsive">
+				<img src="${pageContext.request.contextPath}/staticfile/assets/img/portfolio/folio01.png" class="img-responsive">
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<img src="${pageContext.request.contextPath}/staticFile/assets/img/portfolio/folio02.png" class="img-responsive">
+				<img src="${pageContext.request.contextPath}/staticfile/assets/img/portfolio/folio02.png" class="img-responsive">
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<img src="${pageContext.request.contextPath}/staticFile/assets/img/portfolio/folio03.png" class="img-responsive">
+				<img src="${pageContext.request.contextPath}/staticfile/assets/img/portfolio/folio03.png" class="img-responsive">
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<img src="${pageContext.request.contextPath}/staticFile/assets/img/portfolio/folio04.png" class="img-responsive">
+				<img src="${pageContext.request.contextPath}/staticfile/assets/img/portfolio/folio04.png" class="img-responsive">
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<img src="${pageContext.request.contextPath}/staticFile/assets/img/portfolio/folio05.png" class="img-responsive">
+				<img src="${pageContext.request.contextPath}/staticfile/assets/img/portfolio/folio05.png" class="img-responsive">
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<img src="${pageContext.request.contextPath}/staticFile/assets/img/portfolio/folio06.png" class="img-responsive">
+				<img src="${pageContext.request.contextPath}/staticfile/assets/img/portfolio/folio06.png" class="img-responsive">
 			</div>
 		</div>
 	</div>
@@ -135,9 +133,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-     <script src="${pageContext.request.contextPath}/staticFile/assets/js/jquery.min.js"></script>
+     <script src="${pageContext.request.contextPath}/staticfile/assets/js/jquery.min.js"></script>
   </body>
-    <script src="${pageContext.request.contextPath}/staticFile/assets/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/staticfile/assets/js/bootstrap.min.js"></script>
   </body>
 </html>
     
