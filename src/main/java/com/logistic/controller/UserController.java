@@ -27,4 +27,9 @@ public class UserController {
         return  "userList";
     }
 
+    @RequestMapping("/orderListForUser")
+    public String findOrderListForUser() {
+    	return "order/orderListForUser";
+    }
+
 }
