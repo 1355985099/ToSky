@@ -163,5 +163,4 @@ $(function(){
 
 	
 
-</body>
 </html>
