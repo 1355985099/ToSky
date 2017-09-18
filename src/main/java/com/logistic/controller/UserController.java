@@ -28,6 +28,7 @@ public class UserController {
         //经过视图解析器跳转页面
         return  "userList";
     }
+
     
     @RequestMapping("/login")
     public String login(String userName ,String password) {
@@ -49,4 +50,7 @@ public class UserController {
 		return "redirect://";
     }
     
+
+
+
 }
