@@ -6,6 +6,7 @@ body{
     background:#FFF;
     font-family: 'Open Sans', sans-serif;
 }
+
 body a{
     transition:0.5s all;
     -webkit-transition:0.5s all;
