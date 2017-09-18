@@ -42,6 +42,7 @@ public class LoginController {
 		} catch (MsgException e) {
 			model.addAttribute("msg", e.getMessage());
 			e.printStackTrace();
+			return "login/login"; 
 		}
     	Session.setAttribute("sessionUser",user);
 		return "home"; 
@@ -107,7 +108,7 @@ public class LoginController {
 		}
     }
 	@RequestMapping("/logout")
-	//登陆
+	//退出
 	public String logout(String userName,String password,Model model,HttpSession Session) {
 		User user=null;
 		try {

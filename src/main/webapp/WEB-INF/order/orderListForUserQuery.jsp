@@ -49,24 +49,25 @@
                 <div class="panel-body">
                    
               
-                       <form role="form" name="form1">
+                       <form method="post" role="form" name="form1" action="${pageContext.request.contextPath}/findOrderByOrderInfoId">
 
                            <div class="form-group">
                                <label for="IDCard">请输如快递订单号</label>
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="orderNum" name="orderNum" placeholder="请输如快递订单号" >
+                                   <input type="text" class="form-control" id="orderInfoId" name="orderInfoId" placeholder="请输如快递订单号" value="${orderInfoId}">
                                    <span class="input-group-btn">
                                        <button class="btn btn-default" type="button" onClick="form1.submit();" >查询</button>
                                    </span>
                                </div>
                            </div>
-        
+       					</form>
+       					<form method="post" role="form" name="form2" action="${pageContext.request.contextPath}/findOrderByReceiveTel">
                            <div class="form-group">
                                <label for="IDCard">请输入您要查询的手机号</label>
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="phoneNum" name="phoneNum" placeholder="请输入您要查询的手机号" >
+                                   <input type="text" class="form-control" id="receiveTel" name="receiveTel" placeholder="请输入您要查询的手机号" value="${receiveTel}" >
                                    <span class="input-group-btn">
-                                       <button class="btn btn-default" type="button" onClick="form1.submit();" >查询</button>
+                                       <button class="btn btn-default" type="button" onClick="form2.submit();" >查询</button>
                                    </span>
                                </div>
                            </div>
@@ -75,7 +76,7 @@
            
                        <div class="alert alert-danger alert-dismissable">
                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                           <strong>注意!</strong> 没有查到成绩，请检查手机号或快递号查询！
+                           <strong>注意!</strong> 没有查到信息请检查快递单号或手机号是否有误！有任何疑问请致电400800XXXX
                        </div> 
             
                        <div class="table-responsive">
@@ -87,7 +88,22 @@
                                    <th scope="col"><span style="color:white">目的地</span></th>
                                    <th scope="col"><span style="color:white">签收状态</span></th>
                                </tr>
+                               <c:forEach items="${orderInfoList}" var="orderInfo">
                                <tr class="active">
+                               	   <td>${orderInfo.orderInfoId}</td>
+                                   <td>${orderInfo.receiveTel}</td>
+                                   <td>${orderInfo.sendAddress}</td>
+                                   <td>${orderInfo.receiveAddress}</td>
+                                   <td>
+                                   <c:if test="${orderInfo.order.state==1}">已签收</c:if>
+                                   <c:if test="${orderInfo.order.state==0}">未签收</c:if>
+                                   </td>
+                                </tr>
+                               </c:forEach>
+                               
+                               
+                               
+                               <!-- <tr class="active">
                                    <td>11111111111111111111</td>
                                    <td>18080808080</td>
                                    <td>杭州</td>
@@ -100,7 +116,7 @@
                                    <td>杭州</td>
                                    <td>北京</td>
                                    <td                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            表示                                      >已签收</td>
-                               </tr>
+                               </tr> -->
 
                            </table>
                        </div>         

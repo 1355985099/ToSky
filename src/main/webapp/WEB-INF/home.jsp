@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <%@ include file="base.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -72,6 +73,8 @@
 						</c:if>
 						<c:if test="${sessionUser!=null}" >
 							<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
+							<span  style="color: beige">&nbsp;| &nbsp;</span>
+							<span style="color: beige" ><a href="${app}/login/logout"> 退&nbsp;出</a></span>
 						</c:if>
 					</ul>
 				</div>
@@ -219,7 +222,7 @@
 							<img src="${app}/assets/images/o4.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4>Consultancy Services</h4>
+							<h4><a href="${app}/toOrderListForUser" >查询 订单 </a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>
