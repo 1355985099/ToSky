@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="base.jsp"%>
 <!DOCTYPE html>
@@ -65,14 +66,16 @@
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
-						<c:if test="${sessionUser==null}">
-							<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
-							<span  style="color: beige">&nbsp;| &nbsp;</span>
-							<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
-						</c:if>
-						<c:if test="${sessionUser!=null}" >
-							<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
-						</c:if>
+                        <c:if test="${sessionUser==null}">
+                            <span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
+                            <span  style="color: beige">&nbsp;| &nbsp;</span>
+                            <span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
+                        </c:if>
+                        <c:if test="${sessionUser!=null}" >
+                            <span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
+                            <span  style="color: beige">&nbsp;| &nbsp;</span>
+                            <span style="color: beige" ><a href="${app}/login/logout"  style="color: beige">退&nbsp;出</a></span>
+                        </c:if>
 					</ul>
 				</div>
 				<!-- //Navbar-collapse -->
@@ -88,7 +91,7 @@
 					<div class="caption">
 						<h3>
 							欢迎来到  <span>通天物流</span>
-						</h3>
+`						</h3>
 						<p>自1874年以来，引领物流行业</p>
 					</div></li>
 				<li><img src="${app}/assets/images/2.jpg" alt="Tradeaux">
@@ -113,8 +116,9 @@
 					</div></li>
 				<li><img src="${app}/assets/images/7.jpg" alt="Tradeaux">
 					<div class="caption">
-						<h3>前往 世界<h3>
-					</div></li>
+						<h3>前往 世界</h3>
+					</div>
+				</li>
 
 			</ul>
 		</div>
