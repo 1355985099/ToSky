@@ -13,4 +13,6 @@ public interface OrderInfoMapper {
 	public List<OrderInfo> findAll();//查询所有订单信息
 
 	public OrderInfo findOrderInfoById(String orderInfoId);//根据订单ID查询用户信息
+
+	public void saveInfo(OrderInfo orderInfo);//订单表中查询数据
 }

@@ -43,4 +43,9 @@
 		WHERE 
 			c.order_info_id=b.order_id AND order_info_id=#{orderInfoId}
 	</select>
+	
+	<insert id="saveInfo">
+	insert into order_p(order_id,cargo_name,state,receiveTel) values(
+	#{orderInfoId},#{cargoName},0, #{receiveTel})
+	</insert>
 </mapper>
