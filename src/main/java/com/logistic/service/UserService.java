@@ -7,4 +7,6 @@ import com.logistic.pojo.User;
 
 public interface UserService {
     public List<User> findAll();
+
+	public User findUserByUserName(String username);
 }

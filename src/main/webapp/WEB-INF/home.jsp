@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib uri="http://shiro.apache.org/tags" prefix="shiro"%>
 <%@ include file="base.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -57,22 +58,38 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
+					<shiro:hasPermission name="Home">
 						<li class="active cl-effect-7"><a href="#">Home</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="服务">
 						<li class="cl-effect-7 scroll"><a href="#services">服务</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="提供">
 						<li class="cl-effect-7 scroll"><a href="#offer">提供</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="xxx">
 						<!-- <li class="cl-effect-7 scroll"><a href="#cover">登陆/注册</a></li> -->
 						<li class="cl-effect-7 scroll"><a href="${app}/login">xxx</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="About">
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="Gallery">
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="联系我们">
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
-						<c:if test="${sessionUser==null}">
-							<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
-							<span  style="color: beige">&nbsp;| &nbsp;</span>
-							<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
-						</c:if>
-						<c:if test="${sessionUser!=null}" >
-							<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
-						</c:if>
+					</shiro:hasPermission>
+					<c:if test="${sessionUser==null}">
+						<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
+						<span  style="color: beige">&nbsp;| &nbsp;</span>
+						<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
+					</c:if>
+					<c:if test="${sessionUser!=null}">
+						<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
+						<span  style="color: beige">&nbsp;| &nbsp;</span>
+						<span style="color: beige" ><a href="${app}/home/logout">注&nbsp;销</a></span>
+					</c:if>
 					</ul>
 				</div>
 				<!-- //Navbar-collapse -->
