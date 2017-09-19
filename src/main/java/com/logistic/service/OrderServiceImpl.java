@@ -16,13 +16,14 @@ public class OrderServiceImpl implements OrderService{
 	@Autowired
 	private OrderInfoMapper orderInfoMapper;
 
-	@Override
+
+	@Override/**客户下单信息保存*/
 	public void saveInfo(OrderInfo orderInfo) {
 		orderInfo.setOrderInfoId(UUID.randomUUID().toString());
 		orderInfo.setPrice(orderInfo.getPrice());
 		orderInfo.setVolume(orderInfo.getVolume());
-		orderMapper.saveInfo(orderInfo);
-		orderInfoMapper.saveInfo(orderInfo);
+		orderMapper.saveInfo(orderInfo);//将订单信息插入订单表
+		orderInfoMapper.saveInfo(orderInfo);//将订单信息插入订单详细信息表
 	}
 
 	

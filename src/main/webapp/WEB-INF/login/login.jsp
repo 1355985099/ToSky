@@ -40,7 +40,7 @@
                 <div>
 					<input type="password" name="password" class="password" placeholder="密码" />
                 </div>
-                 <button id="submit" type="submit">注 册</button>
+                 <button id="submit" type="submit">登 陆</button>
             </form>
             <div class="connect">
                 <p id="er">If we can only encounter each other rather than stay with each other,then I wish we had never encountered.</p>

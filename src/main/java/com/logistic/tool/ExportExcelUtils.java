@@ -23,6 +23,11 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 
 
+/**
+ * @author Administrator
+ *:用于实现POI接口,作为查询并导出相关数据的工具类
+ * @param <T>
+ */
 public class ExportExcelUtils<T> {
 	public void export(
             String sheetName, 
