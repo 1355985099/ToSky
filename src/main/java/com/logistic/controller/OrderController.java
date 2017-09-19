@@ -33,7 +33,6 @@ public class OrderController {
 	}
 	
 	@RequestMapping("/save")
-	
 	public String toSave(OrderInfo orderInfo){
 		orderService.saveInfo(orderInfo);
 		return "/order/orderList";

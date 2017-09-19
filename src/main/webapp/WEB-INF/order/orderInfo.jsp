@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ include file="../base.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -103,7 +104,7 @@ $(function(){
 
 		<div class="container w3layouts agileits">
 			<h2>寄件人信息</h2>
-			<form id="send" action="save" method="post">
+			<form id="send" action="${app}/save" method="post">
 			<input type="text" name="sendAddress" placeholder="发货地址" required="">
 				<input type="text" name="sendName" placeholder="寄件人姓名" required="">
 				<input type="text" name="sendTel" placeholder="手机号码" required="">
