@@ -73,4 +73,10 @@ public interface UserMapper {
      */
      @Select("select user_id from user_p where ${name}=#{value}")
      List<String> isRepeat(@Param("name")String vfname,@Param("value")String vfvalue);
+     
+     /**
+     * @param username 用戶名
+     * @return 用戶信息
+     */
+    User findUserByUserName(String username);
 }

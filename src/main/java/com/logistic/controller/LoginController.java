@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.constraints.NotNull;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -36,18 +40,25 @@ public class LoginController {
     @RequestMapping("/login")
     //登陆
     public String login(String userName,String password,Model model,HttpSession Session) {
-    	User user=null;
+    	Subject subject = SecurityUtils.getSubject();
+    	UsernamePasswordToken userToken = new UsernamePasswordToken(userName, password);
 		try {
-			user = loginService.Login(userName,password);
-		} catch (MsgException e) {
-			model.addAttribute("msg", e.getMessage());
+//			user = loginService.Login(userName,password);
+			subject.login(userToken);
+			User user=(User) subject.getPrincipal();
+			Session.setAttribute("sessionUser",user);
+			return "home"; 
+		} catch (AuthenticationException e) {
+			model.addAttribute("msg", "用戶名或密碼錯誤");
 			e.printStackTrace();
-			return "login/login"; 
+			return "login/login";
+		} catch (Exception e) {
+			model.addAttribute("msg", "未知錯誤，請聯繫管理員");
+			e.printStackTrace();
+			return "login/login";
 		}
-    	Session.setAttribute("sessionUser",user);
-		return "home"; 
-    	
     }
+   
     //注册
     @RequestMapping("/reg")
     public String reg(@Validated User user,BindingResult br,Model model) {
