@@ -84,7 +84,7 @@
 					<c:if test="${sessionUser==null}">
 						<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
 						<span  style="color: beige">&nbsp;| &nbsp;</span>
-						<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
+						<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;录</a></span>
 					</c:if>
 					<c:if test="${sessionUser!=null}">
 						<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
@@ -214,7 +214,7 @@
 							<img src="${app}/assets/images/o2.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4><a href="${app}/order">International Freight</a></h4>
+							<h4><a href="${app}/order">我要下单</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>
@@ -238,7 +238,7 @@
 							<img src="${app}/assets/images/o4.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4><a href="${app}/toOrderListForUser" >查询 订单 </a></h4>
+							<h4><a href="${app}/toOrderListForUser" >查询订单</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>
@@ -470,7 +470,7 @@
 						<div class="clearfix"></div>
 					</div>
 
-					<input type="submit" class="more_btn" value="Send Message">
+					<input type="submit" class="more_btn" value="Send Message" disabled="disabled">
 				</form>
 			</div>
 		</div>
@@ -523,7 +523,7 @@
 
 					<form class="newsletter">
 						<input class="email" type="email" placeholder="Your email...">
-						<input type="submit" class="submit" value="">
+						<input type="submit" class="submit" value="" style="cursor: pointer;" disabled="disabled">
 					</form>
 				</div>
 				<div class="clearfix"></div>

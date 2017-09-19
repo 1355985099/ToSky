@@ -64,7 +64,7 @@
 	 	<property name="securityManager" ref="securityManager"></property>
 	 	
 	 	<!--登陆页面 如果程序没有进行认证的登陆认证，则默认访问index.jsp  -->
-	 	<property name="loginUrl" value="/"></property>
+	 	<property name="loginUrl" value="/home/login"></property>
 	 	
 	 	<!--过滤器链  过滤器是有顺序的  -->
 	 	<property name="filterChainDefinitions">

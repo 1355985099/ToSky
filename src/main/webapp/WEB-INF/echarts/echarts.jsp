@@ -39,7 +39,7 @@
 							id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
 								<shiro:hasPermission name="Home">
-									<li class="col-md-1 cl-effect-7"><a href="#">Home</a></li>
+									<li class="col-md-1 cl-effect-7"><a href="${app}/">Home</a></li>
 								</shiro:hasPermission>
 								<shiro:hasPermission name="服务">
 									<li class="col-md-1 cl-effect-7"><a href="#services">服务</a></li>
@@ -117,7 +117,14 @@
 		var myChart=echar.init(document.getElementById('main'));
         var option = {
        		title : {  
-                   text: '近7天订/出单量统计分析',  
+                   text: '近7天订/出单量统计分析', 
+                   textStyle:{//标题内容的样式
+                       color:'rgb(250,250,250)',//京东红
+                       fontStyle:'normal',//主标题文字字体风格，默认normal，有italic(斜体),oblique(斜体)
+                       fontWeight:"lighter",//可选normal(正常)，bold(加粗)，bolder(加粗)，lighter(变细)，100|200|300|400|500...
+                       fontFamily:"san-serif",//主题文字字体，默认微软雅黑
+                       fontSize:18//主题文字字体大小，默认为18px
+                   },
                    x :'center'  
             },
             tooltip: {
@@ -125,11 +132,19 @@
             },
             legend: {
                 data:['订单量','出单量'],
+                textStyle: {
+                    color: 'rgb(250,250,250)'
+                },
             	y : 'bottom'
             },
             xAxis : [
                 {
                     type : 'category',
+                    axisLabel : {  
+                        textStyle: {
+                            color: 'rgb(250,250,250)'
+                        }
+                    },
                     data : [
                             temp[0].userName,
                             temp[1].userName,
@@ -143,7 +158,12 @@
             ],
             yAxis : [
                 {
-                    type : 'value'
+                    type : 'value',
+                    axisLabel : {  
+                        textStyle: {
+                            color: 'rgb(250,250,250)'
+                        }
+                    }
                 }
             ],
             series : [
@@ -200,6 +220,13 @@
         var option = {  
                 title : {  
                     text: '运输方式统计分析',  
+                    textStyle:{//标题内容的样式
+                        color:'rgb(250,250,250)',//京东红
+                        fontStyle:'normal',//主标题文字字体风格，默认normal，有italic(斜体),oblique(斜体)
+                        fontWeight:"lighter",//可选normal(正常)，bold(加粗)，bolder(加粗)，lighter(变细)，100|200|300|400|500...
+                        fontFamily:"san-serif",//主题文字字体，默认微软雅黑
+                        fontSize:18//主题文字字体大小，默认为18px
+                    },
                     x :'center'  
                 },  
                 tooltip : {  
@@ -208,7 +235,10 @@
                 },  
                 legend: {  
                     x : 'center',  
-                    y : 'bottom',  
+                    y : 'bottom',
+                    textStyle: {
+                        color: 'rgb(250,250,250)'
+                    },
                     data:['轮船','火车','汽车','飞机']  
                 },  
                 calculable : true,  
@@ -250,32 +280,50 @@
         var myChart = echar.init(document.getElementById('main'));  
         var option = {  
                 title : {  
-                    text: '各网点日进/出单量折线图 ',   
+                    text: '各网点日进/出单量折线图 ',
+                    textStyle:{//标题内容的样式
+                        color:'rgb(250,250,250)',//京东红
+                        fontStyle:'normal',//主标题文字字体风格，默认normal，有italic(斜体),oblique(斜体)
+                        fontWeight:"lighter",//可选normal(正常)，bold(加粗)，bolder(加粗)，lighter(变细)，100|200|300|400|500...
+                        fontFamily:"san-serif",//主题文字字体，默认微软雅黑
+                        fontSize:18//主题文字字体大小，默认为18px
+                    },
                     x: 'center'  
                 },tooltip : {  
                     trigger: 'axis'  
                 },  
                 legend: {  
-                    data:['进单量','出单量'],  
+                    data:['进单量','出单量'],
+                    textStyle: {
+                        color: 'rgb(250,250,250)'
+                    },
                     y : 'bottom'  
                 },  
                 calculable : true,  
                 xAxis : [  
                          {  
-                             type : 'category',  
+                             type : 'category', 
+                             axisLabel : {  
+                                 textStyle: {
+                                     color: 'rgb(250,250,250)'
+                                 }
+                             }, 
                              boundaryGap : false,  
-                             data : ['北京','上海','广州','深圳','杭州','南京','东京','台湾','廊坊','合肥','苏州']  
+                             data : ['北京','上海','广州','深圳','杭州','南京','东京','台湾','廊坊','合肥','苏州']
                          }  
                      ],  
-                     yAxis : [  
-                              {  
-                                  type : 'value',  
-                                  axisLabel : {  
-                                      formatter: '{value} 单'  
-                                  },  
-                                  min:100,  
-                                  max:5000  
-                              }  
+                 yAxis : [  
+                          {  
+                              type : 'value',  
+                              axisLabel : {  
+                                  formatter: '{value} 单',
+                                  textStyle: {
+                                      color: 'rgb(250,250,250)'
+                                  }
+                              },  
+                              min:100,  
+                              max:5000  
+                          }  
                  ],  
                  series : [  
                             {  
