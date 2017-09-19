@@ -1,6 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib  uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
+<%@ taglib uri="http://shiro.apache.org/tags" prefix="shiro"%>
 <%@ include file="base.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -59,24 +59,38 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
+					<shiro:hasPermission name="Home">
 						<li class="active cl-effect-7"><a href="#">Home</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="服务">
 						<li class="cl-effect-7 scroll"><a href="#services">服务</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="提供">
 						<li class="cl-effect-7 scroll"><a href="#offer">提供</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="下载">
 						<!-- <li class="cl-effect-7 scroll"><a href="#cover">登陆/注册</a></li> -->
 						<li class="cl-effect-7 scroll"><a href="${app}/downLoad">下载</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="About">
 						<li class="cl-effect-7 scroll"><a href="#about">About</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="Gallery">
 						<li class="cl-effect-7 scroll"><a href="#gallery">Gallery</a></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="联系我们">
 						<li class="cl-effect-7 scroll"><a href="#contact">联系我们</a></li>
-						<c:if test="${sessionUser==null}">
-							<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
-							<span  style="color: beige">&nbsp;| &nbsp;</span>
-							<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;陆</a></span>
-						</c:if>
-						<c:if test="${sessionUser!=null}" >
-							<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
-							<span  style="color: beige">&nbsp;| &nbsp;</span>
-							<span style="color: beige" ><a href="${app}/login/logout"> 退&nbsp;出</a></span>
-						</c:if>
+					</shiro:hasPermission>
+					<c:if test="${sessionUser==null}">
+						<span style="color: beige" ><a href="${app}/home/reg"  style="color: beige">注&nbsp;册</a></span>
+						<span  style="color: beige">&nbsp;| &nbsp;</span>
+						<span style="color: beige" ><a href="${app}/home/login"> 登&nbsp;录</a></span>
+					</c:if>
+					<c:if test="${sessionUser!=null}">
+						<span style="color: beige" >欢迎&nbsp;${sessionUser.userName}&nbsp;来到通天国际物流</span>
+						<span  style="color: beige">&nbsp;| &nbsp;</span>
+						<span style="color: beige" ><a href="${app}/home/logout">注&nbsp;销</a></span>
+					</c:if>
 					</ul>
 				</div>
 				<!-- //Navbar-collapse -->
@@ -200,7 +214,7 @@
 							<img src="${app}/assets/images/o2.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4><a href="${app}/order">International Freight</a></h4>
+							<h4><a href="${app}/order">我要下单</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>
@@ -224,7 +238,7 @@
 							<img src="${app}/assets/images/o4.png" alt="Tradeaux">
 						</div>
 						<div class="offer-info">
-							<h4><a href="${app}/toOrderListForUser" >查询 订单 </a></h4>
+							<h4><a href="${app}/toOrderListForUser" >查询订单</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore magna
 								aliqua. Ut enim ad minim veniam.</p>
@@ -319,7 +333,7 @@
 							<img src="${app}/assets/images/n1.png" alt="Tradeaux">
 						</div>
 						<div class="news-info">
-							<h4>Logistics - Company of the Year 2015</h4>
+							<h4><a href="${app}/toEcharts">Logistics - Information</a></h4>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -456,7 +470,7 @@
 						<div class="clearfix"></div>
 					</div>
 
-					<input type="submit" class="more_btn" value="Send Message">
+					<input type="submit" class="more_btn" value="Send Message" disabled="disabled">
 				</form>
 			</div>
 		</div>
@@ -509,7 +523,7 @@
 
 					<form class="newsletter">
 						<input class="email" type="email" placeholder="Your email...">
-						<input type="submit" class="submit" value="">
+						<input type="submit" class="submit" value="" style="cursor: pointer;" disabled="disabled">
 					</form>
 				</div>
 				<div class="clearfix"></div>

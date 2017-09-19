@@ -40,9 +40,10 @@
                 <div>
 					<input type="password" name="password" class="password" placeholder="密码" />
                 </div>
-                 <button id="submit" type="submit">登 陆</button>
+                 <button id="submit" type="submit">登录</button>
             </form>
             <div class="connect">
+            	<span style="color: beige" ><a href="${app}/home/reg"  style="color: rgb(250，250，250);">没有账号?请注册</a></span>
                 <p id="er">If we can only encounter each other rather than stay with each other,then I wish we had never encountered.</p>
 				<p style="margin-top:20px;">如果只是遇见，不能停留，不如不遇见。</p>
             </div>

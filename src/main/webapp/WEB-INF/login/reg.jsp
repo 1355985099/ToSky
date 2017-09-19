@@ -58,6 +58,7 @@
 			<button id="submit" type="submit">注 册</button>
 		</form>
 		<div class="connect">
+			<span style="color: rgb(250,250,250);" ><a href="${app}/home/login">有账号?请登录</a></span>
 			<p id="er">If we can only encounter each other rather than stay
 				with each other,then I wish we had never encountered.</p>
 			<p style="margin-top: 20px;">如果只是遇见，不能停留，不如不遇见。</p>

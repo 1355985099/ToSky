@@ -29,6 +29,9 @@
      <select id="findUser" resultType="com.logistic.pojo.User">
         select * from user_p  where user_id=#{userId}
     </select>
+     <select id="findUserByUserName" resultType="com.logistic.pojo.User">
+        select * from user_p  where username=#{username}
+    </select>
      <select id="Login" resultType="com.logistic.pojo.User">
         select * from user_p  where username=#{userName} and password=#{password}
     </select>
