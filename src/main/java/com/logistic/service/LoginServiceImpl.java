@@ -37,7 +37,7 @@ public class LoginServiceImpl implements LoginService {
 		userMapper.saveUser(user);  //保存用户
 		Date aging=new Date(System.currentTimeMillis()+1000*60*60);
 		userMapper.saveAging(user.getUserId(), aging, 0,user.getEmail());
-		String html=eu.simpleHtml(user.getUserName(),"http://localhost/login/activate/"+user.getUserId()
+		String html=eu.simpleHtml(user.getUserName(),"http://176.20.14.219/login/activate/"+user.getUserId()
 							, aging);
 		eu.sendHtmlMail(user.getEmail(), "欢迎"+user.getUserName()+"使用通天快递", html); 
 	}
@@ -64,7 +64,7 @@ public class LoginServiceImpl implements LoginService {
 		User user=userMapper.findUser(userId);
 		Date aging=new Date(System.currentTimeMillis()+1000*60*60);
 		userMapper.updateAging(aging, userId);//更新时间
-		String html=eu.simpleHtml(user.getUserName(),"http://localhost/login/activate/"+user.getUserId()
+		String html=eu.simpleHtml(user.getUserName(),"http://176.20.14.219/login/activate/"+user.getUserId()
 		, aging);
 		eu.sendHtmlMail(user.getEmail(), "欢迎"+user.getUserName()+"使用通天快递", html); 
 		return user;
