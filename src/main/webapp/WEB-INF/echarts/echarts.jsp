@@ -146,13 +146,13 @@
                         }
                     },
                     data : [
-                            temp[0].userName,
-                            temp[1].userName,
-                            temp[2].userName,
-                            temp[3].userName,
-                            temp[4].userName,
-                            temp[5].userName,
-                            temp[6].userName
+                            '2017-9-12',
+                            '2017-9-13',
+                            '2017-9-14',
+                            '2017-9-15',
+                            '2017-9-16',
+                            '2017-9-17',
+                            '2017-9-18'
                            ]
                 }
             ],

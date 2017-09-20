@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="${app}/assets/css/owl.carousel.css"
 	type="text/css" media="all">
 
-<!-- Web-Fonts -->
+<!-- Web-Fonts 
  <link href='http://fonts.useso.com/css?family=Open+Sans:400,300,600,700'
 	rel='stylesheet' type='text/css'>
 <link href='http://fonts.useso.com/css?family=Montserrat:400,700'
@@ -33,7 +33,7 @@
 <link
 	href='http://fonts.useso.com/css?family=Raleway:400,300,500,600,700,800,900'
 	rel='stylesheet' type='text/css'> 
-<!-- //Web-Fonts -->
+ //Web-Fonts -->
 
 <script src="${app}/assets/js/modernizr.custom.js"></script>
 

@@ -39,12 +39,12 @@
 						<div class="collapse navbar-collapse"
 							id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li class="col-md-1 cl-effect-7"><a href="#">Home</a></li>
+								<li class="col-md-1 cl-effect-7"><a href="${app}/">Home</a></li>
 								<li class="col-md-1 cl-effect-7"><a href="#services">服务</a></li>
 								<li class="col-md-1 cl-effect-7"><a href="#offer">提供</a></li>
 								<li class="col-md-1 cl-effect-7"><a href="${app}/findMap.action">网点</a></li>
-								<li class="col-md-1 cl-effect-7"><a href="${app}/home/reg">注&nbsp;册/</a></li>
-								<li class="col-md-1 cl-effect-7"><a href="${app}/home/login"> &nbsp;| &nbsp;登&nbsp;陆</a>
+								<li class="col-md-1 cl-effect-7"><a href="${app}/home/reg">注&nbsp;册</a></li>
+								<li class="col-md-1 cl-effect-7"><a href="${app}/home/login"> &nbsp;&nbsp;登&nbsp;陆</a>
 								</li>
 							</ul>
 						</div>
